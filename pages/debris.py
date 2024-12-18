@@ -22,8 +22,8 @@ with st.expander("See source code"):
         tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.shp'
         debris = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris%20imp.shp'
 
-        m.add_geojson(tribe, layer_name='tribe')
-        m.add_geojson(debris, layer_name='debris')
+        m.add_shp(tribe, layer_name='tribe')
+        m.add_shp(debris, layer_name='debris')
         m.add_points_from_xy(
             cities,
             x="longitude",
