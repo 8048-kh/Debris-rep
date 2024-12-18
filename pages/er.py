@@ -36,6 +36,16 @@ m.center = (latitude, longitude)
 #m.center = (longitude, latitude)
 m.zoom = 12
 # Display the updated map and selected tribe
+
+m.add_points_from_xy(
+            cities,
+            x="longitude",
+            y="latitude",
+            icon_names=["gear", "map", "leaf", "globe"],
+            spin=True,
+            add_legend=True,
+        )
+
 m.to_streamlit(height=700)
 
 # Display the selected tribe
