@@ -20,18 +20,17 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[40, -100], zoom=4)
         tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.csv'
-        #debris = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris%20imp.shp'
+        regions = "https://github.com/8048-kh/test/raw/refs/heads/main/REGION.shp"
 
-        #m.add_shp(tribe, layer_name='tribe')
-       # m.add_shp(debris, layer_name='debris')
+        m.add_shp(regions, layer_name="Aboriginal Tribes")
         m.add_points_from_xy(
-            tribe,
+            cities,
             x="longitude",
             y="latitude",
-            #color_column='region',
-            icon_names=['gear', 'map', 'leaf', 'globe'],
+            color_column="region",
+            icon_names=["gear", "map", "leaf", "globe"],
             spin=True,
             add_legend=True,
         )
-        
+
 m.to_streamlit(height=700)
