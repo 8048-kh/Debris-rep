@@ -21,13 +21,15 @@ tribe_names = tribes_df['tribe name'].tolist()
 # Create a selectbox for tribe names
         
 selected_tribe = st.selectbox(
-            "選擇部落",  # Label for the selectbox
-            tribe_names,  # Options for the selectbox (tribe names)
-            key="selectbox_tribe"  # Unique key for the selectbox
-    )
+    "選擇部落", tribe_names, key="selectbox_tribe"
+)
 selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[0]
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
+
+# 更新地圖中心和縮放級別
+m.center = (latitude, longitude)  
+m.zoom = 12  # 設定縮放級別為 12 或任何你想要的級別
 
 # Update map center
 m.center = (latitude, longitude)  
