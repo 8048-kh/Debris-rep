@@ -40,7 +40,7 @@ longitude = selected_tribe_data['longitude']
 
 # 更新地圖中心和縮放級別
 m.center = (latitude, longitude)  
-m.zoom = 20  # 設定縮放級別為 12 或任何你想要的級別
+m.zoom = 14  # 設定縮放級別為 12 或任何你想要的級別
 m.to_streamlit(height=700)
 
 # Display the selected tribe
