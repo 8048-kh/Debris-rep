@@ -25,7 +25,7 @@ selected_tribe = st.selectbox(
     tribe_names,  # Options for the selectbox (tribe names)
     key="selectbox_tribe"  # Unique key for the selectbox
     )
-selected_tribe_data = tribes_df[cities_df['tribe name'] == selected_tribe].iloc[0]
+selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[0]
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
