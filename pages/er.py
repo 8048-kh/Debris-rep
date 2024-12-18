@@ -14,9 +14,9 @@ st.title("Aboriginal Tribes")
 
 
 m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
-cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
-cities_df = pd.read_csv(cities)
-tribe_names = cities_df['部落名稱'].tolist()
+tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.csv"
+tribes_df = pd.read_csv(tribes)
+tribe_names = tribes_df['tribe name'].tolist()
 
 # Create a selectbox for tribe names
         
@@ -25,7 +25,7 @@ selected_tribe = st.selectbox(
     tribe_names,  # Options for the selectbox (tribe names)
     key="selectbox_tribe"  # Unique key for the selectbox
     )
-selected_tribe_data = cities_df[cities_df['部落名稱'] == selected_tribe].iloc[0]
+selected_tribe_data = cities_df[cities_df['tribe name'] == selected_tribe].iloc[0]
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
