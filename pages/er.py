@@ -33,8 +33,10 @@ selected_tribe = st.selectbox(
     "選擇部落", tribe_names, key="selectbox_tribe"
 )
 selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[0]
-latitude = selected_tribe_data['latitude']
-longitude = selected_tribe_data['longitude']
+
+# 從 'coordinates' 欄位讀取座標
+coordinates = selected_tribe_data['coordinates']  # 假設座標欄位名稱為 'coordinates'
+latitude, longitude = map(float, coordinates.strip('()').split(','))
 
 # 更新地圖中心和縮放級別
 m.center = (latitude, longitude)  
