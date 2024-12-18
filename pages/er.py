@@ -43,7 +43,7 @@ longitude = selected_tribe_data['longitude']
 
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
-m.set_center(longitude, latitude, zoom=12) 
+m.set_center(longitude, latitude, zoom=15) 
 # Add a marker for the selected tribe
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
 
