@@ -20,10 +20,10 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[40, -100], zoom=4)
         tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.csv'
-        debris = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris%20imp.shp'
+        #debris = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris%20imp.shp'
 
         m.add_shp(tribe, layer_name='tribe')
-        m.add_shp(debris, layer_name='debris')
+       # m.add_shp(debris, layer_name='debris')
         m.add_points_from_xy(
             tribe,
             x="longitude",
