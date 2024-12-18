@@ -4,27 +4,22 @@ import leafmap.foliumap as leafmap
 st.set_page_config(layout="wide")
 
 markdown = """
-Web App URL: <https://geotemplate.streamlit.app>
-GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
+A Streamlit map template
+<https://github.com/opengeos/streamlit-map-template>
 """
 
-st.sidebar.title("About")
-st.sidebar.info(markdown)
-logo = "https://i.imgur.com/UbOXYAU.png"
-st.sidebar.image(logo)
-
-st.title("Marker Cluster")
+st.title("Aboriginal Tribes")
 
 with st.expander("See source code"):
     with st.echo():
 
-        m = leafmap.Map(center=[40, -100], zoom=4)
-        tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.csv'
+        m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+        cities = "https://github.com/8048-kh/test/raw/refs/heads/main/Aboriginal%20Tribes%20area.csv"
         regions = "https://github.com/8048-kh/test/raw/refs/heads/main/REGION.shp"
 
         m.add_shp(regions, layer_name="Aboriginal Tribes")
         m.add_points_from_xy(
-            tribe,
+            cities,
             x="longitude",
             y="latitude",
             color_column="region",
