@@ -29,13 +29,7 @@ longitude = selected_tribe_data['longitude']
 
 # 更新地圖中心和縮放級別
 m.center = (latitude, longitude)  
-m.zoom = 12  # 設定縮放級別為 12 或任何你想要的級別
-
-# Update map center
-m.center = (latitude, longitude)  
-#m.center = (longitude, latitude)
-m.zoom = 12
-# Display the updated map and selected tribe
+m.zoom = 20  # 設定縮放級別為 12 或任何你想要的級別
 
 m.add_points_from_xy(
             tribes,
