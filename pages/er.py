@@ -11,38 +11,43 @@ A Streamlit map template
 
 st.title("Aboriginal Tribes")
 
-
-
+# Create a Leafmap map object
 m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+
+# Load the tribes data
 tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Nantou%20Tribe.csv"
 tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
+# Add points to the map
 m.add_points_from_xy(
-            tribes,
-            x="longitude",
-            y="latitude",
-            icon_names=["gear", "map", "leaf", "globe"],
-            spin=True,
-            add_legend=True,
-        )
+    tribes,
+    x="longitude",
+    y="latitude",
+    icon_names=["gear", "map", "leaf", "globe"],
+    spin=True,
+    add_legend=True,
+)
 
 # Create a selectbox for tribe names
-        
 selected_tribe = st.selectbox(
     "選擇部落", tribe_names, key="selectbox_tribe"
 )
+
+# Get the data of the selected tribe
 selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[0]
 
-# 從 'latitude' 和 'longitude' 欄位讀取座標
+# Get coordinates from 'latitude' and 'longitude'
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
-# 更新地圖中心和縮放級別
-m.zoom_to_bounds([(latitude, longitude)], padding=1)  # Adjust map view to the selected point
+# Recenter and zoom to the selected tribe
+m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
+
+# Add a marker for the selected tribe
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
-#m.center = (latitude, longitude)  
-#m.zoom = 14  # 設定縮放級別為 12 或任何你想要的級別
+
+# Display the map in Streamlit
 m.to_streamlit(height=700)
 
 # Display the selected tribe
