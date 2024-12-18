@@ -41,10 +41,8 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
-# Recenter and zoom to the selected tribe
-m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
-
-# Add a marker for the selected tribe
+# Add a marker for the selected tribe with zoom and recenter
+m.zoom_to_bounds([(latitude, longitude)], padding=1)  # Adjust map view to the selected point
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
 
 # Display the map in Streamlit
