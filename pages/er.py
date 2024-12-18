@@ -52,3 +52,4 @@ m.to_streamlit(height=700)
 
 # Display the selected tribe
 st.write(f"您選擇的部落是：{selected_tribe}")
+
