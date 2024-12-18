@@ -19,7 +19,7 @@ with st.expander("See source code"):
     with st.echo():
 
         m = leafmap.Map(center=[40, -100], zoom=4)
-        tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.shp'
+        tribe = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20tribe.csv'
         debris = 'https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris%20imp.shp'
 
         m.add_shp(tribe, layer_name='tribe')
