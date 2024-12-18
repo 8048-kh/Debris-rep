@@ -30,10 +30,18 @@ latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
 # Update map center
-#m.center = (latitude, longitude)  
-m.center = (longitude, latitude)
+m.center = (latitude, longitude)  
+#m.center = (longitude, latitude)
 m.zoom = 12
 # Display the updated map and selected tribe
+for layer in m.layers:
+    if layer.name == "Aboriginal Tribes":  # Replace with your layer name if different
+        for feature in layer.features:
+            if feature.properties.get('部落名稱') == selected_tribe:
+                # Center the map on the feature's coordinates
+                m.center = (feature.geometry['coordinates'][1], feature.geometry['coordinates'][0])
+                break  # Stop searching once the feature is found
+
 m.to_streamlit(height=700)
 
 # Display the selected tribe
