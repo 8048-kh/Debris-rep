@@ -38,7 +38,7 @@ m.zoom = 12
 # Display the updated map and selected tribe
 
 m.add_points_from_xy(
-            cities,
+            tribes,
             x="longitude",
             y="latitude",
             icon_names=["gear", "map", "leaf", "globe"],
