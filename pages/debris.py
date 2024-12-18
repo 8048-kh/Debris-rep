@@ -25,7 +25,7 @@ with st.expander("See source code"):
         m.add_shp(tribe, layer_name='tribe')
         m.add_shp(debris, layer_name='debris')
         m.add_points_from_xy(
-            cities,
+            tribe,
             x="longitude",
             y="latitude",
             color_column='region',
