@@ -24,7 +24,7 @@ with st.expander("See source code"):
 
         m.add_shp(regions, layer_name="Aboriginal Tribes")
         m.add_points_from_xy(
-            cities,
+            tribe,
             x="longitude",
             y="latitude",
             color_column="region",
