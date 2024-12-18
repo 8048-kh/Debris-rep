@@ -39,8 +39,10 @@ latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 
 # 更新地圖中心和縮放級別
-m.center = (latitude, longitude)  
-m.zoom = 14  # 設定縮放級別為 12 或任何你想要的級別
+m.zoom_to_bounds([(latitude, longitude)], padding=1)  # Adjust map view to the selected point
+m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
+#m.center = (latitude, longitude)  
+#m.zoom = 14  # 設定縮放級別為 12 或任何你想要的級別
 m.to_streamlit(height=700)
 
 # Display the selected tribe
