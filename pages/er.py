@@ -18,6 +18,15 @@ tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/nantou%20t
 tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
+m.add_points_from_xy(
+            tribes,
+            x="longitude",
+            y="latitude",
+            icon_names=["gear", "map", "leaf", "globe"],
+            spin=True,
+            add_legend=True,
+        )
+
 # Create a selectbox for tribe names
         
 selected_tribe = st.selectbox(
@@ -30,16 +39,6 @@ longitude = selected_tribe_data['longitude']
 # 更新地圖中心和縮放級別
 m.center = (latitude, longitude)  
 m.zoom = 20  # 設定縮放級別為 12 或任何你想要的級別
-
-m.add_points_from_xy(
-            tribes,
-            x="longitude",
-            y="latitude",
-            icon_names=["gear", "map", "leaf", "globe"],
-            spin=True,
-            add_legend=True,
-        )
-
 m.to_streamlit(height=700)
 
 # Display the selected tribe
