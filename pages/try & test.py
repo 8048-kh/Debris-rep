@@ -21,7 +21,7 @@ tribe_names = tribes_df['tribe name'].tolist()
 
 # Add points to the map
 m.add_points_from_xy(
-    tribes,
+    tribes_df,
     x="longitude",
     y="latitude",
     icon_names=["gear", "map", "leaf", "globe"],
