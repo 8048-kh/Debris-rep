@@ -40,7 +40,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 # Get coordinates from 'latitude' and 'longitude'
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
-
+m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
@@ -48,7 +48,7 @@ m.set_center(longitude, latitude, zoom=15)
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
 #m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/debris_impect.shp")
 
-m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
+#m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 # Display the map in Streamlit
 st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
