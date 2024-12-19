@@ -62,7 +62,7 @@ m.add_geojson(
     },
     add_legend=True,
 )
-m.add_legend(title="debris", builtin_legend="Risk")
+
 
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
