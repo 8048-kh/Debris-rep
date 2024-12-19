@@ -43,6 +43,24 @@ latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 m.add_geojson(debris, layer_name='debris')
+m.add_geojson(
+    debris,
+    layer_name='debris',
+    style_callback=lambda feature: {
+        "fillColor": (
+            "red"
+            if feature["properties"]["Risk"] == "中"
+            else "orange"
+            if feature["properties"]["Risk"] == "低"
+            else "yellow"
+            if feature["properties"]["Risk"] == "持續觀察"
+            else "green"
+        ),
+        "color": "black",
+        "weight": 1,
+        "fillOpacity": 0.5,
+    },
+)
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
