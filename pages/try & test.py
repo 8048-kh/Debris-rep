@@ -62,18 +62,9 @@ m.add_geojson(
     },
     add_legend=True,
 )
+m.add_legend(title="debris", builtin_legend="Risk")
 
-m.add_geojson(
-    debris,
-    layer_name='debris',
-    #style_callback=style_callback,
-    add_legend=True,
-)
-# Recenter and zoom to the selected tribe
-#m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
-# Add a marker for the selected tribe
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
-# Display the map in Streamlit
 st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
