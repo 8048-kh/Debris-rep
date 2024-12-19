@@ -37,7 +37,7 @@ m.add_geojson(debris, layer_name='debris')
 m.add_geojson(
     debris,
     layer_name='debris',
-    color_column='region',
+    color_column='Risk',
     add_legend=True,
 )
 
