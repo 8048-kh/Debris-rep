@@ -25,7 +25,7 @@ m.add_points_from_xy(
     tribes,
     x="longitude",
     y="latitude",
-    icon_names=["gear", "map", "leaf", "globe"],
+    #icon_names=["gear", "map", "leaf", "globe"],
     spin=True,
     #add_legend=True,
 )
@@ -63,12 +63,7 @@ m.add_geojson(
     add_legend=True,
 )
 
-m.add_legend(
-    title="風險等級",  # 設定圖例標題
-    colors=["red", "orange", "yellow", "green"],  # 設定顏色
-    labels=["高", "中", "低", "無"],  # 設定標籤
-    position="bottomright",  # 設定圖例位置，例如 'topright', 'bottomleft' 等
-)
+
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
