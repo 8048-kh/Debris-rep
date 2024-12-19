@@ -21,15 +21,6 @@ tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
 # Add points to the map
-m.add_points_from_xy(
-    tribes,
-    x="longitude",
-    y="latitude",
-    #icon_names=["gear", "map", "leaf", "globe"],
-    spin=True,
-    #add_legend=True,
-)
-
 # Create a selectbox for tribe names
 selected_tribe = st.selectbox(
     "選擇部落", tribe_names, key="selectbox_tribe"
