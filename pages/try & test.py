@@ -62,10 +62,11 @@ m.add_geojson(
     },
     add_legend=True,
 )
-#m.add_legend(title='debris', builtin_legend='debris risk')
-Script execution error
+
+
+# Recenter and zoom to the selected tribe
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
-#m.add_legend(title='debris', builtin_legend='debris risk')
+# Display the map in Streamlit
 st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
