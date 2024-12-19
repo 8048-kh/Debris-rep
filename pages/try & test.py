@@ -47,6 +47,7 @@ m.set_center(longitude, latitude, zoom=15)
 # Add a marker for the selected tribe
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
 m.add_shp(https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/SHP%20Files/nwe%20debris%20imp/fix%20debris%20imp.shx)
+
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/SHP%20Files/%E9%83%A8%E8%90%BD1.shp")
 # Display the map in Streamlit
 m.to_streamlit(height=700)
