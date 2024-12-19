@@ -27,7 +27,7 @@ m.add_points_from_xy(
     y="latitude",
     icon_names=["gear", "map", "leaf", "globe"],
     spin=True,
-    add_legend=True,
+    #add_legend=True,
 )
 
 # Create a selectbox for tribe names
@@ -43,6 +43,31 @@ latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 m.add_geojson(debris, layer_name='debris')
+m.add_geojson(
+    debris,
+    layer_name='debris',
+    style_callback=lambda feature: {
+        "fillColor": (
+            "orange"
+            if feature["properties"]["Risk"] == "中"
+            else "yellow"
+            if feature["properties"]["Risk"] == "低"
+            else "green"
+            if feature["properties"]["Risk"] == "持續觀察"
+            else "red"
+        ),
+        "color": "black",
+        "weight": 1,
+        "fillOpacity": 0.5,
+    },
+    add_legend=True,
+)
+
+#m.add_legend(
+#    title="風險等級",  # 設定圖例標題
+#    colors=["red", "orange", "yellow", "green"],  # 設定顏色
+#    labels=["高", "中", "低", "持續觀察"],  # 設定標籤
+#)
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
