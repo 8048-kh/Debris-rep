@@ -61,6 +61,7 @@ m.add_geojson(
         "fillOpacity": 0.5,
     },
     add_legend=True,
+    add_legend(title='ESA Land Cover', builtin_legend='ESA_WorldCover')
 )
 
 
