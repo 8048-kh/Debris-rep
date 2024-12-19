@@ -33,7 +33,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribe_test2_5.shp")
-m.add_geojson(debris, layer_name='debris')
+#m.add_geojson(debris, layer_name='debris')
 m.add_geojson(
     debris,
     layer_name='debris',
@@ -51,16 +51,20 @@ m.add_geojson(
         "weight": 1,
         "fillOpacity": 0.5,
     },
-    legend_name="Risk Level",  # Set the legend title
-    legend_kwds={
-        "labels": ["高", "中", "低", "持續觀察"],  # Legend labels
-        "colors": ["red", "orange", "yellow", "green"],  # Legend colors
-        "position": "bottomright"  # Legend position
-    }
+    add_legend=True,
 )
-    # Add legend information here
-    legend_name='Risk Level', 
-    legend_kwds={'labels': ['高', '中', '低', '持續觀察'], 'colors': ['red', 'orange', 'yellow', 'green']} 
+legend_dict = {
+    "持續觀察": "green",
+    "低": "yellow",
+    "中": "orange",
+    "高": "red",
+}
+
+m.add_legend(
+    title="Risk Level",
+    legend_dict=legend_dict,
+    opacity=1.0,
+    position="bottomright",
 )
 
 # Recenter and zoom to the selected tribe
