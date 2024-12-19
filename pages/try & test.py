@@ -50,8 +50,5 @@ m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{se
 
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 # Display the map in Streamlit
-m.to_streamlit(height=700)
-
-# Display the selected tribe
 st.write(f"您選擇的部落是：{selected_tribe}")
-
+m.to_streamlit(height=700)
