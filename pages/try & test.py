@@ -51,9 +51,10 @@ m.add_geojson(
         "weight": 1,
         "fillOpacity": 0.5,
     },
-    add_legend=True,
+    # Add legend information here
+    legend_name='Risk Level', 
+    legend_kwds={'labels': ['高', '中', '低', '持續觀察'], 'colors': ['red', 'orange', 'yellow', 'green']} 
 )
-
 
 # Recenter and zoom to the selected tribe
 m.set_center(longitude, latitude, zoom=15) 
