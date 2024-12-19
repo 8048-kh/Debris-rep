@@ -42,6 +42,11 @@ latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/debris_impect.shp")
+
+# 迭代上傳的檔案，新增每個shp圖層
+for filename in uploaded.keys():
+    if filename.endswith(".shp"):  # 只處理shp檔案
+        m.add_shp(filename, layer_name=filename[:-4])  # 使用檔案名稱作為圖層名稱
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
