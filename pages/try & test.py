@@ -25,7 +25,7 @@ m.add_points_from_xy(
     x="longitude",
     y="latitude",
     icon_names=["gear", "map", "leaf", "globe"],
-    spin=True,
+    #spin=True,
     add_legend=True,
     layer_name="部落點",  # 設定圖層名稱
 )
