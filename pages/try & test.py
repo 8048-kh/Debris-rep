@@ -60,14 +60,14 @@ m.add_geojson(
         "weight": 1,
         "fillOpacity": 0.5,
     },
-    legend_name="風險等級",
+    add_legend=True,
 )
 
-m.add_legend(
-    title="風險等級",  # 設定圖例標題
-    colors=["red", "orange", "yellow", "green"],  # 設定顏色
-    labels=["高", "中", "低", "持續觀察"],  # 設定標籤
-)
+#m.add_legend(
+#    title="風險等級",  # 設定圖例標題
+#    colors=["red", "orange", "yellow", "green"],  # 設定顏色
+#    labels=["高", "中", "低", "持續觀察"],  # 設定標籤
+#)
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
