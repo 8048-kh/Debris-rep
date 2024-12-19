@@ -25,7 +25,7 @@ m.add_points_from_xy(
     tribes,
     x="longitude",
     y="latitude",
-    icon_names=["gear", "map", "leaf", "globe"],
+    #icon_names=["gear", "map", "leaf", "globe"],
     spin=True,
     #add_legend=True,
 )
@@ -62,7 +62,7 @@ m.add_geojson(
     },
     add_legend=True,
 )
-m.add_legend(title='debris', builtin_legend='debris risk')
+#m.add_legend(title='debris', builtin_legend='debris risk')
 Script execution error
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
