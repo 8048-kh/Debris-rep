@@ -50,11 +50,11 @@ m.add_geojson(
         "fillColor": (
             "green"
             if feature["properties"]["Risk"] == "中"
-            else "red"
+            else "yellow"
             if feature["properties"]["Risk"] == "低"
             else "orange"
             if feature["properties"]["Risk"] == "持續觀察"
-            else "yellow"
+            else "red"
         ),
         "color": "black",
         "weight": 1,
