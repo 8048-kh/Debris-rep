@@ -61,11 +61,11 @@ m.add_geojson(
         "fillOpacity": 0.5,
     },
     add_legend=True,
-    add_legend(title='ESA Land Cover', builtin_legend='ESA_WorldCover')
 )
 
-
+Script execution error
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
+m.add_legend(title='debris', builtin_legend='debris risk')
 st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
