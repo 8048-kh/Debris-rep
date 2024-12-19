@@ -41,7 +41,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 #m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
-m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/dtest/debris_test2.shp")
+m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/dtest/debris_test_8.shp")
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
