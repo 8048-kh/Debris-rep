@@ -31,10 +31,10 @@ m.add_points_from_xy(
 )
 
 # Add shp layers
-m.add_shp(
-    "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp",
-    layer_name="部落範圍",  # 設定圖層名稱
-)
+#m.add_shp(
+#    "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp",
+#    layer_name="部落範圍",  # 設定圖層名稱
+#)
 m.add_shp(
     "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/debris_impect.shp",
     layer_name="土石流影響範圍",  # 設定圖層名稱
