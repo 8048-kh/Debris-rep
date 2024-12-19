@@ -63,11 +63,12 @@ m.add_geojson(
     add_legend=True,
 )
 
-#m.add_legend(
-#    title="風險等級",  # 設定圖例標題
-#    colors=["red", "orange", "yellow", "green"],  # 設定顏色
-#    labels=["高", "中", "低", "持續觀察"],  # 設定標籤
-#)
+m.add_geojson(
+    debris,
+    layer_name='debris',
+    style_callback=style_callback,
+    add_legend=True,
+)
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
