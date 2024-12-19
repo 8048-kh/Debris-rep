@@ -66,7 +66,7 @@ m.add_geojson(
 m.add_geojson(
     debris,
     layer_name='debris',
-    style_callback=style_callback,
+    #style_callback=style_callback,
     add_legend=True,
 )
 # Recenter and zoom to the selected tribe
