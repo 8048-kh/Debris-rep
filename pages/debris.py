@@ -16,6 +16,7 @@ m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
 
 # Load the tribes data
 tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Nantou_Tribe.csv"
+debris = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris_impact.geojson"
 tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
@@ -41,7 +42,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribe_test.shp")
-#m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/debris_impect.shp")
+m.add_geojson(debris, layer_name='debris')
 # Recenter and zoom to the selected tribe
 #m.set_center(latitude, longitude, zoom=12)  # Dynamically update center and zoom level
 m.set_center(longitude, latitude, zoom=15) 
