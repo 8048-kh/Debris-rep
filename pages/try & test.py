@@ -51,6 +51,13 @@ m.add_geojson(
         "weight": 1,
         "fillOpacity": 0.5,
     },
+    legend_name="Risk Level",  # Set the legend title
+    legend_kwds={
+        "labels": ["高", "中", "低", "持續觀察"],  # Legend labels
+        "colors": ["red", "orange", "yellow", "green"],  # Legend colors
+        "position": "bottomright"  # Legend position
+    }
+)
     # Add legend information here
     legend_name='Risk Level', 
     legend_kwds={'labels': ['高', '中', '低', '持續觀察'], 'colors': ['red', 'orange', 'yellow', 'green']} 
