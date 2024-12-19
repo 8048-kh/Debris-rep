@@ -60,6 +60,7 @@ m.add_geojson(
         "weight": 1,
         "fillOpacity": 0.5,
     },
+    legend_name="風險等級",
 )
 
 m.add_legend(
