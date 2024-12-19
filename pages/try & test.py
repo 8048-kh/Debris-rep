@@ -48,11 +48,11 @@ m.add_geojson(
     layer_name='debris',
     style_callback=lambda feature: {
         "fillColor": (
-            "green"
+            "orange"
             if feature["properties"]["Risk"] == "中"
             else "yellow"
             if feature["properties"]["Risk"] == "低"
-            else "orange"
+            else "green"
             if feature["properties"]["Risk"] == "持續觀察"
             else "red"
         ),
