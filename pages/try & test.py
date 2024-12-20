@@ -15,8 +15,8 @@ st.title("Aboriginal Tribes")
 m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
 
 # Load the tribes data
-tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Nantou_Tribe.csv"
-debris = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/debris_impact.geojson"
+tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
+debris = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/debris_impact.geojson"
 tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
