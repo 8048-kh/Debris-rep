@@ -1,7 +1,7 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import pandas as pd
-
+import geopandas as gpd
 st.set_page_config(layout="wide")
 
 markdown = """
