@@ -46,9 +46,9 @@ m.add_geojson(
             if feature["properties"]["Risk"] == "持續觀察"
             else "red"
         ),
-        "color": "black",
-        "weight": 1,
-        "fillOpacity": 0.5,
+        #"color": "black",
+        #"weight": 1,
+        #"fillOpacity": 0.5,
     },
     add_legend=True,
 )
