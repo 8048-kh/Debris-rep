@@ -72,7 +72,7 @@ m.set_center(longitude, latitude, zoom=15)
 location = (latitude, longitude)  # 設定標記的經緯度座標
 tooltip =   tooltip = selected_tribe # 設定滑鼠懸停時顯示的提示訊息
 popup = f"{selected_tribe}"  # 設定點擊標記時顯示的彈出視窗內容
-m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
+m.add_marker(location, tooltip=selected_tribe, popup=f"{selected_tribe}")
 # Display the map in Streamlit
 st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
