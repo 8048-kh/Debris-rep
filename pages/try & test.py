@@ -44,7 +44,7 @@ m.add_points_from_xy(
             y="latitude",
             spin=False,
         )
-location = (latitude, longitude)  # 設定標記的經緯度座標
+location = (y, x)  # 設定標記的經緯度座標
 tooltip = selected_tribe  # 設定滑鼠懸停時顯示的提示訊息
 popup = f"{selected_tribe}"  # 設定點擊標記時顯示的彈出視窗內容
 m.add_marker(location=location, tooltip=selected_tribe, popup=f"{selected_tribe}")
