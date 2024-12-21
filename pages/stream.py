@@ -33,39 +33,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
-#m.add_geojson(debris, layer_name='debris')
-m.add_geojson(
-    debris,
-    layer_name='debris',
-    style_callback=lambda feature: {
-        "fillColor": (
-            "orange"
-            if feature["properties"]["Risk"] == "中"
-            else "yellow"
-            if feature["properties"]["Risk"] == "低"
-            else "green"
-            if feature["properties"]["Risk"] == "持續觀察"
-            else "red"
-        ),
-        "color": "black",
-        "weight": 1,
-        "fillOpacity": 0.5,
-    },
-    add_legend=True,
-)
-legend_dict = {
-    "持續觀察": "green",
-    "低": "yellow",
-    "中": "orange",
-    "高": "red",
-}
-
-m.add_legend(
-    title="Risk Level",
-    legend_dict=legend_dict,
-    opacity=1.0,
-    position="bottomright",
-)
+m.add_shp(https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp)
 
 # Recenter and zoom to the selected tribe
 m.set_center(longitude, latitude, zoom=15) 
