@@ -34,6 +34,15 @@ markdown = """
 
 st.markdown(markdown)
 
-m = leafmap.Map(minimap_control=True)
-m.add_basemap("OpenTopoMap")
-m.to_streamlit(height=500)
+
+m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
+        m.add_geojson(regions, layer_name='tribes')
+        m.add_points_from_xy(
+            tribes,
+            x="longitude",
+            y="latitude",
+            spin=True,
+        )
+        
+m.to_streamlit(height=700)
