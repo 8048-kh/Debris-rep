@@ -32,7 +32,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 # Get coordinates from 'latitude' and 'longitude'
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
-m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
+m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Full_Nantou_Tribe.shp")
 #m.add_geojson(debris, layer_name='debris')
 m.add_geojson(
     debris,
