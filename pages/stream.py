@@ -16,6 +16,7 @@ m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
 
 # Load the tribes data
 tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
+streams = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/streams.geojson"
 tribes_df = pd.read_csv(tribes)
 tribe_names = tribes_df['tribe name'].tolist()
 
@@ -32,11 +33,8 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
-#m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
-shp_file = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
-risk = shp_file['Risk']
-m.add_shp(
-    shp_file,
+m.add_geojson(
+    streams,
     layer_name='streams',
     style_callback=lambda feature: {
         "fillColor": (
