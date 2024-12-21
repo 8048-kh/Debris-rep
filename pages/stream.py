@@ -36,7 +36,7 @@ m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/t
 shp_file = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
 risk = shp_file['Risk']
 m.add_shp(
-    shp_file
+    shp_file,
     layer_name='streams',
     style_callback=lambda feature: {
         "fillColor": (
