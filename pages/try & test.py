@@ -47,7 +47,7 @@ m.add_points_from_xy(
 x="longitude"
 y="latitude"
 location = (y, x)  # 設定標記的經緯度座標
-tooltip = selected_tribe  # 設定滑鼠懸停時顯示的提示訊息
+#tooltip = selected_tribe  # 設定滑鼠懸停時顯示的提示訊息
 popup = f"{selected_tribe}"  # 設定點擊標記時顯示的彈出視窗內容
 m.add_marker(location=location, tooltip=selected_tribe, popup=f"{selected_tribe}")
 m.to_streamlit(height=700)
