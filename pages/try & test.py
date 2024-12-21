@@ -1,41 +1,48 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-import pandas as pd
 
 st.set_page_config(layout="wide")
 
+# Customize the sidebar
 markdown = """
-A Streamlit map template
-<https://github.com/opengeos/streamlit-map-template>
+Web App URL: <https://geotemplate.streamlit.app>
+GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
 """
 
-st.title("Aboriginal Tribes")
+st.sidebar.title("About")
+st.sidebar.info(markdown)
+logo = "https://i.imgur.com/UbOXYAU.png"
+st.sidebar.image(logo)
 
-# Create a Leafmap map object
-m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
+# Customize page title
+st.title("南投原鄉部落與土石流分布")
 
-# Load the tribes data
-tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
-tribes_df = pd.read_csv(tribes)
-tribe_names = tribes_df['tribe name'].tolist()
-
-# Add points to the map
-# Create a selectbox for tribe names
-selected_tribe = st.selectbox(
-    "選擇部落", tribe_names, key="selectbox_tribe"
+st.markdown(
+    """
+    南投原鄉部落與土石流潛勢溪流、土石流潛勢溪流範圍分布
+    """
 )
 
-# Get the data of the selected tribe
-selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[0]
+st.header("目錄")
 
-# Get coordinates from 'latitude' and 'longitude'
-latitude = selected_tribe_data['latitude']
-longitude = selected_tribe_data['longitude']
-m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
-# Recenter and zoom to the selected tribe
-m.set_center(longitude, latitude, zoom=15) 
+markdown = """
+1. 原鄉部落座標與資訊
+2. 原鄉部落與土石流潛勢溪流
+3. 原鄉部落與土石流潛勢溪流範圍
+
+"""
+
+st.markdown(markdown)
+
+
+m = leafmap.Map(center=[23.932630, 120.986852], zoom=10)
+tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
+#m.add_geojson(tribes, layer_name='tribes')
+m.add_points_from_xy(
+            tribes,
+            x="longitude",
+            y="latitude",
+            spin=False,
+        )
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
-# Display the map in Streamlit
-st.write(f"您選擇的部落是：{selected_tribe}")
 m.to_streamlit(height=700)
-st.table(selected_tribe_data)
