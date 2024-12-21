@@ -32,10 +32,11 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
-m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
+#m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
 shp_file = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/streams.shp")
 risk = shp_file['Risk']
 m.add_shp(
+    shp_file
     layer_name='streams',
     style_callback=lambda feature: {
         "fillColor": (
