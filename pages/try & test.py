@@ -33,7 +33,7 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
-gdf = gpd.read_file("streams.geojson")  # 替換為您的 GeoJSON 檔案路徑
+gdf = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/streams.geojson")  # 替換為您的 GeoJSON 檔案路徑
 
 color_dict = {
     "低": "green",
