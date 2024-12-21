@@ -1,12 +1,12 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-
+import pandas as pd
 st.set_page_config(layout="wide")
 
 # Customize the sidebar
 markdown = """
-Web App URL: <https://nantoudebris.streamlit.app>
-GitHub Repository: <https://github.com/8048-kh/Debris-rep>
+Web App URL: <https://geotemplate.streamlit.app>
+GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
 """
 
 st.sidebar.title("About")
@@ -36,13 +36,7 @@ st.markdown(markdown)
 
 
 m = leafmap.Map(center=[23.932630, 120.986852], zoom=10)
-tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
-#m.add_geojson(tribes, layer_name='tribes')
-m.add_points_from_xy(
-            tribes,
-            x="longitude",
-            y="latitude",
-            spin=True,
-        )
-        
-m.to_streamlit(height=700)
+#tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
+tribes_df = pd.read_csv("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv")
+st.header("部落名稱")
+st.table(tribes_df[["tribe name"]])
