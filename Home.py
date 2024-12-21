@@ -6,7 +6,7 @@ st.set_page_config(layout="wide")
 # Customize the sidebar
 markdown = """
 Web App URL: <https://nantoudebris.streamlit.app>
-GitHub Repository: <https://github.com/giswqs/streamlit-multipage-template>
+GitHub Repository: <https://github.com/8048-kh/Debris-rep>
 """
 
 st.sidebar.title("About")
