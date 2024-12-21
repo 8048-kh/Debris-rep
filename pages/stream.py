@@ -33,29 +33,29 @@ selected_tribe_data = tribes_df[tribes_df['tribe name'] == selected_tribe].iloc[
 latitude = selected_tribe_data['latitude']
 longitude = selected_tribe_data['longitude']
 m.add_shp("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/shpfile/tribetest/tribes_p1.shp")
+gdf = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/streams.geojson")  # 替換為您的 GeoJSON 檔案路徑
+
+color_dict = {
+    "低": "green",
+    "中": "yellow",
+    "高": "red",
+}
+
+def style_callback(feature):
+    return {
+        "color": color_dict.get(feature["properties"]["Risk"], "gray"),
+        "weight": 2,
+    }
+
+m = leafmap.Map()
 m.add_geojson(
-    streams,
-    layer_name='streams',
-    style_callback=lambda feature: {
-        "fillColor": (
-            "orange"
-            if feature["properties"]["Risk"] == "中"
-            else "yellow"
-            if feature["properties"]["Risk"] == "低"
-            else "green"
-            if feature["properties"]["Risk"] == "持續觀察"
-            else "red"
-        ),
-        #"color": "black",
-        #"weight": 1,
-        #"fillOpacity": 0.5,
-    },
-    add_legend=True,
+    gdf, 
+    style_callback=style_callback,
+        add_legend=True,
 )
 legend_dict = {
-    "持續觀察": "green",
-    "低": "yellow",
-    "中": "orange",
+    "低": "green",
+    "中": "yellow",
     "高": "red",
 }
 
@@ -65,6 +65,7 @@ m.add_legend(
     opacity=1.0,
     position="bottomright",
 )
+
 # Recenter and zoom to the selected tribe
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
