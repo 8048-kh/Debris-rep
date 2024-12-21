@@ -35,7 +35,7 @@ markdown = """
 st.markdown(markdown)
 
 
-m = leafmap.Map(center=[23.932630, 120.986852], zoom=8)
+m = leafmap.Map(center=[23.932630, 120.986852], zoom=10)
 tribes = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Nantou_Tribe.csv"
 #m.add_geojson(tribes, layer_name='tribes')
 m.add_points_from_xy(
