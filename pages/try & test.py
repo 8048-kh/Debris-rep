@@ -54,9 +54,8 @@ m.add_geojson(
         add_legend=True,
 )
 legend_dict = {
-    "持續觀察": "green",
-    "低": "yellow",
-    "中": "orange",
+    "低": "green",
+    "中": "yellow",
     "高": "red",
 }
 
