@@ -48,8 +48,25 @@ def style_callback(feature):
     }
 
 m = leafmap.Map()
-m.add_geojson(gdf, style_callback=style_callback)
-m
+m.add_geojson(
+    gdf, 
+    style_callback=style_callback,
+        add_legend=True,
+)
+legend_dict = {
+    "持續觀察": "green",
+    "低": "yellow",
+    "中": "orange",
+    "高": "red",
+}
+
+m.add_legend(
+    title="Risk Level",
+    legend_dict=legend_dict,
+    opacity=1.0,
+    position="bottomright",
+)
+
 # Recenter and zoom to the selected tribe
 m.set_center(longitude, latitude, zoom=15) 
 m.add_marker(location=(latitude, longitude), tooltip=selected_tribe, popup=f"{selected_tribe}")
