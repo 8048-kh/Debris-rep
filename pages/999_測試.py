@@ -18,7 +18,7 @@ st.title("Heatmap")
 with st.expander("See source code"):
     with st.echo():
         filepath = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Debris_Points.csv"
-        m = leafmap.Map(center=[40, -100], zoom=4)
+        m = leafmap.Map(center=[23.926170, 120.988871], zoom=10.5)
         m.add_heatmap(
             filepath,
             latitude="Y",
