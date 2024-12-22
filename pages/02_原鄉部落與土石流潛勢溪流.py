@@ -9,7 +9,7 @@ A Streamlit map template
 <https://github.com/opengeos/streamlit-map-template>
 """
 
-st.title("Aboriginal Tribes")
+st.title("原鄉部落與土石流潛勢溪流")
 
 # Create a Leafmap map object
 m = leafmap.Map(center=[23.97565, 120.9738819], zoom=4)
