@@ -36,8 +36,9 @@ longitude = selected_tribe_data['longitude']
 gdf = gpd.read_file("https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/streams.geojson")  # 替換為您的 GeoJSON 檔案路徑
 
 color_dict = {
-    "低": "green",
-    "中": "yellow",
+    "持續觀察": "green",
+    "低": "yellow",
+    "中": "orange",
     "高": "red",
 }
 
@@ -52,10 +53,10 @@ m.add_geojson(
     gdf, 
     style_callback=style_callback,
         add_legend=True,
-)
 legend_dict = {
-    "低": "green",
-    "中": "yellow",
+    "持續觀察": "green",
+    "低": "yellow",
+    "中": "orange",
     "高": "red",
 }
 
