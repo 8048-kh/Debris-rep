@@ -49,7 +49,7 @@ st.altair_chart(
         tooltip=["town", "count"],
     )
     .configure_mark(opacity=0.7, color="blue")
-    .properties(title="各鄉鎮數量統計")
+    .properties(title="原鄉部落與土石流潛勢溪流數量統計")
     .interactive(),
     use_container_width=True,
 )
