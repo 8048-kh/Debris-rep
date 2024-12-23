@@ -46,7 +46,7 @@ st.altair_chart(
     alt.Chart(chart_data)
     .mark_bar()
     .encode(
-        x=alt.X("town:N", title="鄉鎮"),
+        x=alt.X("town:N", title="鄉鎮", sort='-y'),
         y=alt.Y("count:Q", title="數量"),
         tooltip=["town", "count"],
     )
