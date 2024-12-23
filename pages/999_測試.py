@@ -1,6 +1,6 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-
+import pandas as pd
 st.set_page_config(layout="wide")
 
 markdown = """
@@ -28,3 +28,27 @@ with st.expander("See source code"):
             radius=20,
         )
 m.to_streamlit(height=700)
+
+town_counts = data.groupby('town').size().reset_index(name='count')
+
+# 建立 chart_data
+chart_data = pd.DataFrame({
+    'town': town_counts['Town'],
+    'count': town_counts['count']
+})
+st.write(
+    f"""**Breakdown of rides per minute between {hour_selected}:00 and {(hour_selected + 1) % 24}:00**"""
+)
+st.altair_chart(
+    alt.Chart(town_data)
+    .mark_bar()
+    .encode(
+        x=alt.X("town:N", title="鄉鎮"),
+        y=alt.Y("count:Q", title="數量"),
+        tooltip=["town", "count"],
+    )
+    .configure_mark(opacity=0.7, color="blue")
+    .properties(title="各鄉鎮數量統計")
+    .interactive(),
+    use_container_width=True,
+)
