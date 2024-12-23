@@ -37,7 +37,7 @@ st.altair_chart(
         tooltip=["town", "count"],
     )
     .configure_mark(opacity=0.7, color="blue")
-    .properties(title="原鄉部落與土石流潛勢溪流數量統計")
+    .properties(title="行政區土石流潛勢溪流數量統計")
     .interactive(),
     use_container_width=True,
 )
@@ -67,7 +67,7 @@ st.altair_chart(
         tooltip=["Vill", "count"],
     )
     .configure_mark(opacity=0.7, color="blue")
-    .properties(title=f"{selected_town} 各村里土石流潛勢溪流範圍數量統計")
+    .properties(title=f"{selected_town} 內村里土石流潛勢溪流範圍數量統計")
     .interactive(),
     use_container_width=True,
 )
