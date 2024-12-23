@@ -11,7 +11,7 @@ GitHub Repository: <https://github.com/8048-kh/Debris-rep/tree/master>
 
 st.sidebar.title("About")
 st.sidebar.info(markdown)
-logo = "https://i.imgur.com/UbOXYAU.png"
+logo = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.businesstoday.com.tw%2Farticle%2Fcategory%2F183027%2Fpost%2F202308080012%2F&psig=AOvVaw2dizZQzPkY5gwANCXlCUgO&ust=1735022968254000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDoprCmvYoDFQAAAAAdAAAAABAE"
 st.sidebar.image(logo)
 
 # Customize page title
