@@ -59,7 +59,7 @@ legend_dict = {
     "中": "orange",
     "高": "red",
 }
-
+)
 m.add_legend(
     title="Risk Level",
     legend_dict=legend_dict,
