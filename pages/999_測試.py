@@ -29,7 +29,7 @@ with st.expander("See source code"):
         )
 m.to_streamlit(height=700)
 
-town_counts = data.groupby('town').size().reset_index(name='count')
+town_counts = df.groupby('town').size().reset_index(name='count')
 
 # 建立 chart_data
 chart_data = pd.DataFrame({
