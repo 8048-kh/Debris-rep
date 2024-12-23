@@ -41,3 +41,33 @@ st.altair_chart(
     .interactive(),
     use_container_width=True,
 )
+town_list = df['Town'].unique().tolist()
+selected_town = st.selectbox("選擇鄉鎮", town_list)
+
+# 篩選資料並計算 Vill 數量
+filtered_df = df[df['Town'] == selected_town]
+vill_counts = filtered_df.groupby('Vill').size().reset_index(name='count')
+
+# 建立 chart_data
+vill_data = pd.DataFrame({
+    'Vill': vill_counts['Vill'],
+    'count': vill_counts['count']
+})
+
+# 將資料由高到低排序
+vill_data = vill_data.sort_values(by=['count'], ascending=False)
+
+# 繪製圖表
+st.altair_chart(
+    alt.Chart(vill_data)
+    .mark_bar()
+    .encode(
+        x=alt.X("Vill:N", title="Vill", sort='-y'),
+        y=alt.Y("count:Q", title="數量"),
+        tooltip=["Vill", "count"],
+    )
+    .configure_mark(opacity=0.7, color="blue")
+    .properties(title=f"{selected_town} 各村里土石流潛勢溪流範圍數量統計")
+    .interactive(),
+    use_container_width=True,
+)
