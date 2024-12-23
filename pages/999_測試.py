@@ -41,11 +41,11 @@ st.altair_chart(
     .interactive(),
     use_container_width=True,
 )
-town_list = df['town'].unique().tolist()
+town_list = df['Town'].unique().tolist()
 selected_town = st.selectbox("選擇鄉鎮", town_list)
 
 # 篩選資料並計算 Vill 數量
-filtered_df = df[df['town'] == selected_town]
+filtered_df = df[df['Town'] == selected_town]
 vill_counts = filtered_df.groupby('Vill').size().reset_index(name='count')
 
 # 建立 chart_data
