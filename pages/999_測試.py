@@ -3,7 +3,7 @@ import leafmap.foliumap as leafmap
 import pandas as pd
 import altair as alt
 st.set_page_config(layout="wide")
-st.title("Heatmap")
+st.title("土石流潛勢溪流範圍熱區圖")
 
 
 filepath = "https://github.com/8048-kh/Debris-rep/raw/refs/heads/master/Data/Debris_Points.csv"
