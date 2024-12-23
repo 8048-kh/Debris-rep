@@ -38,6 +38,7 @@ chart_data = pd.DataFrame({
     'town': town_counts['Town'],
     'count': town_counts['count']
 })
+chart_data = chart_data.sort_values(by=['count'], ascending=False)
 st.write(
     f"""**表格**"""
 )
