@@ -39,9 +39,7 @@ chart_data = pd.DataFrame({
     'count': town_counts['count']
 })
 chart_data = chart_data.sort_values(by=['count'], ascending=False)
-st.write(
-    f"""**表格**"""
-)
+
 st.altair_chart(
     alt.Chart(chart_data)
     .mark_bar()
