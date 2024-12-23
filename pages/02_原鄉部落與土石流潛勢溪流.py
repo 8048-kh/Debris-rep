@@ -50,16 +50,17 @@ def style_callback(feature):
 
 m = leafmap.Map()
 m.add_geojson(
-    gdf, 
-    style_callback=style_callback,
+        gdf, 
+        style_callback=style_callback,
         add_legend=True,
+)
 legend_dict = {
     "持續觀察": "green",
     "低": "yellow",
     "中": "orange",
     "高": "red",
 }
-)
+
 m.add_legend(
     title="Risk Level",
     legend_dict=legend_dict,
